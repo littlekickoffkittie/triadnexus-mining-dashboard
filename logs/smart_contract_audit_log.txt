@@ -1,0 +1,22 @@
+TriadToken.sol Smart Contract Audit Log
+
+Audit Summary:
+- Contract uses OpenZeppelin's ERC20 and Ownable for security and standard compliance.
+- Mining reward logic includes a cooldown to prevent abuse.
+- Valid Sierpinski hashes are tracked for mining eligibility.
+- Constructor mints initial supply to owner.
+
+Security Observations:
+- No reentrancy risk detected as minting is internal and state updated before mint.
+- Only owner can add valid hashes, which is appropriate.
+- Cooldown enforced using block.timestamp, which is acceptable for this use case.
+- No access control issues found.
+
+Gas Optimization Suggestions:
+- Consider emitting events for claimMiningReward and addValidSierpinskiHash functions to improve transparency and off-chain tracking.
+- Mapping validSierpinskiHashes could be optimized if large, but current usage seems reasonable.
+- Use immutable keyword for MINING_REWARD and MINING_COOLDOWN constants to save gas.
+
+Next Steps:
+- Add missing events for key actions.
+- Implement unit tests covering all functions and edge cases.

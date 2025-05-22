@@ -1,0 +1,12 @@
+Deployment Scripts Update Log
+
+- Consolidated deployment scripts into a single TypeScript script: scripts/deploy.ts
+- Added environment variable validation for FOUNDATIONAL_WALLET_ADDRESS
+- Added error handling and logging for token transfer
+- Save deployment info to deployments.json with multi-network support
+- Removed deprecated backup files planned (awaiting confirmation)
+- Addressed TypeScript import issues by importing hre and accessing ethers and network from it
+
+Next steps:
+- Test deployment script functionality
+- Proceed to frontend improvements as per Beta Release Preparation Plan
